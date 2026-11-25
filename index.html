@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lewis Reeves | Mechanical Engineering Portfolio</title>
+<meta name="description" content="Mechanical engineer (Honours, Macquarie University) focused on material science, smart materials and space technology.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Colours and fonts: edit the :root block at the top */
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:1.05rem/1.65 var(--body)}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent2);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--head);line-height:1.1}
+p{max-width:64ch;color:var(--muted)}
+nav{display:flex;flex-wrap:wrap;gap:8px 28px;justify-content:space-between;align-items:baseline}
+nav ul{display:flex;gap:24px;list-style:none;padding:0}
+nav a{color:var(--ink);text-decoration:none}
+.hero-top{display:grid;grid-template-columns:1fr 300px;gap:48px;align-items:end}
+.portrait{width:100%;display:block;object-fit:cover;object-position:60% 30%}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font:600 1rem var(--body);padding:12px 24px;color:var(--ink)}
+.projects,.timeline{list-style:none;padding:0}
+.row{all:unset;box-sizing:border-box;display:grid;grid-template-columns:1fr 2fr;gap:8px 32px;width:100%;padding:22px 24px;cursor:pointer}
+.row:focus-visible{outline:3px solid var(--accent2);outline-offset:-3px}
+.row h3{font-size:1.3rem}
+.row .tags,.dlg .tags{font-size:.85rem;font-weight:600;color:var(--accent2)}
+.row .tags{margin-top:6px}
+.row p{align-self:center}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}
+.skills h3{font-size:1.1rem;margin-bottom:6px}
+.skills p{font-size:.98rem}
+.timeline h3{font-size:1.2rem;margin:2px 0 4px}
+.timeline .when{font-size:.9rem;font-weight:600;color:var(--accent2)}
+.contact p{margin-bottom:22px}
+footer{padding:28px 0 48px;font-size:.9rem;color:var(--muted)}
+dialog{border:var(--bw) solid var(--ink);background:var(--card);color:var(--ink);border-radius:var(--r);padding:0;width:min(820px,94vw);max-height:90vh;margin:auto}
+dialog::backdrop{background:rgba(10,14,12,.6)}
+dialog[open]{animation:pop .18s ease-out}
+@keyframes pop{from{transform:translateY(10px);opacity:0}}
+.dlg{padding:32px}
+.dlg h2{font-size:2rem;margin:4px 0 16px}
+.dlg p{margin-bottom:14px}
+.dlg .close{float:right;font:600 .95rem var(--body);padding:8px 16px;border:var(--bw) solid var(--ink);background:var(--card);color:var(--ink);cursor:pointer;border-radius:var(--r)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));margin:20px 0}
+.facts dt{font-size:.78rem;font-weight:600;color:var(--accent2)}
+.facts dd{font-weight:600}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:16px}
+.gallery img,.ph{width:100%;aspect-ratio:4/3;object-fit:cover;border:var(--bw) solid var(--ink);display:block}
+.ph{display:grid;place-items:center;font-size:.85rem;font-weight:600;color:var(--accent2);background:var(--bg)}
+:root{--bg:#F4EFE4;--ink:#1B1A16;--muted:#55524A;--accent:#2F5D46;--accent2:#2D6A9F;--card:#FBF8F1;--line:#CFC7B3;--bw:1px;--r:0;--head:"Fraunces",Georgia,serif;--body:"Inter","Helvetica Neue",Arial,sans-serif}
+nav{padding:22px 0;border-bottom:1px solid var(--ink)}
+nav strong{font:600 1.1rem var(--head)}
+nav ul{font-size:.92rem}
+nav a:hover{color:var(--accent)}
+/* first screen: nav + intro fill the window exactly, so the line above Projects sits at the bottom edge */
+.top{display:flex;flex-direction:column;min-height:calc(100vh - 2px);min-height:calc(100svh - 2px)}
+.top .hero{flex:1;display:flex;flex-direction:column;justify-content:center;padding:32px 0}
+.hero-top{grid-template-columns:1fr 280px}
+.hero h1{font-size:clamp(3.4rem,11vw,8rem);font-weight:600;letter-spacing:-.035em;line-height:.92}
+.hero .lede{margin-top:24px;font:italic 400 1.5rem/1.4 var(--head);color:var(--ink);max-width:30ch}
+.portrait{aspect-ratio:3/4;filter:grayscale(1) contrast(1.05)}
+.jump{margin-top:40px;padding-top:24px;border-top:2px solid var(--ink);display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.jump a{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 18px;border:1px solid var(--ink);color:var(--ink);text-decoration:none;font:500 1.1rem/1.2 var(--head)}
+.jump a::after{content:"\2193";font-family:var(--body);color:var(--accent)}
+.jump a:hover{background:var(--ink);color:var(--bg)}
+.jump a:hover::after{color:var(--bg)}
+.jump a.solid{background:var(--accent);border-color:var(--accent);color:#F4EFE4}
+.jump a.solid::after{color:#F4EFE4}
+.jump a.solid:hover{background:var(--ink);border-color:var(--ink)}
+.btn{border:1px solid var(--ink)}
+.btn.solid{background:var(--accent);border-color:var(--accent);color:#F4EFE4}
+.btn:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+section{padding:72px 0;border-top:2px solid var(--ink)}
+section>.wrap>h2{font-size:2.6rem;font-weight:600;font-style:italic;letter-spacing:-.02em;margin-bottom:36px}
+.projects{counter-reset:p;border-bottom:1px solid var(--line)}
+.projects li{border-top:1px solid var(--line)}
+.row{padding:26px 0}
+.row h3{font-size:1.6rem;font-weight:600}
+.row h3::before{counter-increment:p;content:counter(p,decimal-leading-zero);display:block;font:600 .75rem var(--body);letter-spacing:.16em;color:var(--accent);margin-bottom:8px}
+.row:hover h3{color:var(--accent);font-style:italic}
+.skills{gap:0 40px}
+.skills div{padding:20px 0;border-top:1px solid var(--line)}
+.skills h3{font-weight:600;font-size:1.25rem}
+.timeline li{display:grid;grid-template-columns:150px 1fr;gap:0 24px;padding:20px 0;border-top:1px solid var(--line)}
+.timeline .when{grid-row:span 2;color:var(--accent)}
+.contact p{font:400 1.6rem/1.4 var(--head);color:var(--ink);max-width:34ch}
+footer{border-top:2px solid var(--ink)}
+.dlg h2{font-weight:600}
+.row .tags,.dlg .tags,.facts dt,.ph{color:#3E6B55}
+.facts div{padding:10px 0;border-bottom:1px solid var(--line)}
+.ph{background:repeating-linear-gradient(45deg,transparent 0 10px,var(--line) 10px 11px)}
+@media(max-width:700px){.timeline li{grid-template-columns:1fr}.timeline .when{grid-row:auto}}
+@media(max-width:800px){.hero-top{grid-template-columns:1fr}.portrait{max-width:240px}}
+@media(max-width:700px){.row{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}dialog[open]{animation:none}.btn,.row{transition:none}}
+</style>
+</head>
+<body>
+
+<div class="wrap top">
+  <nav aria-label="Main">
+    <strong>Lewis Reeves</strong>
+    <ul>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience &amp; Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-top">
+      <div><h1 id="h-name"></h1><p class="lede" id="h-lede"></p></div>
+      <img class="portrait" id="h-photo" alt="Portrait of Lewis Reeves" hidden>
+    </div>
+    <div class="jump" id="h-jump"></div>
+  </header>
+</div>
+
+<section id="projects"><div class="wrap"><h2>Projects</h2><ul class="projects" id="projectList"></ul></div></section>
+<section id="skills"><div class="wrap"><h2>Skills</h2><div class="skills" id="skillList"></div></div></section>
+<section id="experience"><div class="wrap"><h2>Experience &amp; Education</h2><ol class="timeline" id="expList"></ol></div></section>
+<section id="contact" class="contact"><div class="wrap"><h2>Contact</h2><p id="contactText"></p><div class="actions" id="contactLinks"></div></div></section>
+
+<footer><div class="wrap" id="footer"></div></footer>
+
+<dialog id="dlg" aria-labelledby="dlgTitle"></dialog>
+
+<script>
+/* =====================================================================
+   EDIT YOUR CONTENT HERE. Everything on the page is generated from this
+   one object, so you never need to touch the HTML or CSS to change text.
+   Items marked (check) are written from a summary. Confirm them.
+   ===================================================================== */
+const SITE = {
+  name: "Lewis Reeves",
+  lede: "Mechanical engineer with a focus on material science and smart materials, and on space exploration, resources, technology and operations. Background in aerospace structures, drones and defence technology.",
+  // Buttons under your intro. [label, section id]. Add, remove or reorder freely.
+  jump: [
+    ["Projects", "#projects"],
+    ["Skills", "#skills"],
+    ["Experience & Education", "#experience"],
+    ["Contact", "#contact"]
+  ],
+  photo: "images/headshot.png",   // your portrait. Leave "" to hide it.
+  resume: "",   // e.g. "Lewis Reeves CV.pdf" (upload the file next to index.html). Leave "" to hide the CV button.
+  email: "lewisr0003@gmail.com",
+  linkedin: "https://linkedin.com/in/lewisreeves",
+  contactText: "I'm looking for graduate roles and opportunities in aerospace, structural engineering and defence. Get in touch if you'd like to talk.",
+
+  projects: [
+    {
+      title: "Honours thesis: piezoelectric systems in aerospace structures",
+      tags: "Smart materials, FEA, CFD",
+      summary: "Could piezoelectric harvesters power a self-monitoring A320 structure? FEA of the front wing spar and CFD of the whole aircraft.",
+      facts: [
+        ["Method", "FEA (Ansys Mechanical), CFD (Ansys Fluent), analytical power estimates"],
+        ["Key result", "About 1.5 W from a spar-mounted array after derating, against a 1 W benchmark"],
+        ["Supervisor", "Prof. Noushin Nasiri"]
+      ],
+      details: [
+        "Most piezoelectric research optimises the material. This thesis takes a systems view: what happens when sensing and energy harvesting are built into a real aircraft structure, and what it costs in mass, size and money. The plan moved from a wind tunnel test to simulation because a printed model can’t reproduce real spar bending, and the harvesters in the literature can’t be bought.",
+        "I ran FEA on a simplified A320 front spar and CFD on a half-model of the aircraft, with mesh convergence checks on both. A cantilever array on one spar face (about 136 harvesters) could produce about 7.7 W at peak, or about 1.5 W after an 80% allowance for normal operation and losses. That clears the 1 W benchmark, but only just. Skin-mounted harvesters produced nanowatts. The system would add roughly 4–5 kg and US$100,000, so integration is feasible on the spar but marginal."
+      ],
+      images: []   // e.g. ["images/thesis1.png", "images/thesis2.png"]
+    },
+    {
+      title: "Macquarie Aerospace Rover Society: competition rover",
+      tags: "Structures, systems, budgeting",
+      summary: "A modular planetary rover for the Australian Rover Challenge. I work on the structure and manage the society’s budget as treasurer.",
+      facts: [
+        ["Role", "Senior Structural Member and Treasurer"],
+        ["Structures", "T-slot chassis and suspension, factor of safety above 2"],
+        ["Constraints", "Under 60 kg deployed, fits a 1.6 m lander envelope, cost under A$35,000"]
+      ],
+      details: [
+        "One platform carries different payloads for four competition tasks. The structures side covers the chassis and suspension: a T-slot frame reworked for electrical access and the volume limit, and a suspension that must hold over 120 kg on level ground and 30° slopes. Mass is the priority because the team’s scoring analysis found it is worth four to six times as much as volume or energy.",
+        "As treasurer I’m responsible for the budget, including keeping the rover under the competition’s A$35,000 cost cap. Large purchases come from a Space Research Network grant and urgent ones from a society account, so one delayed order doesn’t stall the build."
+      ],
+      images: []
+    },
+    {
+      title: "Space crane gearbox",
+      tags: "Gear design, analysis, testing",
+      summary: "A lunar crane gearbox built by a four-person team. I designed and analysed the gear sub-system and helped diagnose the first assembly’s lock-up.",
+      facts: [
+        ["Course", "MECH3003"],
+        ["My role", "Gear sub-system: concepts, analysis and testing"],
+        ["Final design", "17.7:1 ratio, three stages, 0.23 kg"],
+        ["Result", "Lifted 22 kg, failed at 25 kg (belt)"]
+      ],
+      details: [
+        "The brief was to lift 25 kg in 10–15 seconds within a 200 × 100 × 75 mm envelope for under $300. I compared four concepts and chose a 17.7:1, three-stage design. The others were too heavy and expensive, or risked poor motor control and high gear stress.",
+        "Excel analysis of shaft torque, tooth forces and Lewis bending stress showed steel was essential for the last gear pair, whose safety factors were low (0.67 and 0.97). I accepted that because the method is conservative.",
+        "The first assembly locked up from several small faults, including two e-clips per shaft adding friction, which I found and cut to one. At the competition it lifted 22 kg and failed at 25 kg when the belt gave out."
+      ],
+      images: []
+    },
+    {
+      title: "Wheelbarrow handle attachment",
+      tags: "Product design, FMEA, FEA",
+      summary: "A clamp-on ergonomic handle that fits an existing wheelbarrow arm. My report covers the FMEA, FEA and the bottom-case drawing.",
+      facts: [
+        ["Course", "MECH4001 Product Design Engineering"],
+        ["Methods", "FMEA, Creo Simulate FEA, AS 1100 drawings"],
+        ["Critical region", "Pivot bolt hole: 50 N·m at a 500 N load"]
+      ],
+      details: [
+        "The attachment clamps to an existing arm with M6 bolts and captive nuts, so the frame needs no modification. An FMEA of two variants ruled out a ball joint (too much rotational freedom) and flagged over-rotation in the folded sheet design, which design changes cut from a risk priority number of 165 to 96.",
+        "A static FEA in Creo Simulate with a 500 N load matched my hand calculation (M = 500 N × 0.10 m = 50 N·m): stress concentrated at the pivot bolt hole. It ignores fatigue and dynamic loads, so I used it to justify more reinforcement, no sharp transitions and rounded edges, rather than to predict failure."
+      ],
+      images: []
+    }
+  ],
+
+  skills: [
+    ["Structural analysis", "FEA in Creo Simulate and Ansys Mechanical, checked against hand calculations and mesh convergence studies."],
+    ["Aerodynamics", "Full-aircraft CFD in Ansys Fluent with mesh independence checks, from the thesis work."],
+    ["Mechanical design", "Gear train and mechanism design, product design with FMEA, and AS 1100 manufacturing drawings."],
+    ["Project and cost management", "Budgeting and cost tracking as society treasurer, plus risk ranking and scheduling on team projects."],
+    ["Technical writing", "Engineering reports, literature reviews and IEEE referencing."],
+    ["Tools", "Ansys (SpaceClaim, Mechanical, Fluent), Creo, Onshape, Excel for design calculations, 3D printing."]
+  ],
+
+  experience: [
+    ["Internship", "Redtail Technologies", "Defence and drone engineering internship. Add what you worked on and what you delivered."],
+    ["Current", "Senior Structural Member and Treasurer, Macquarie Aerospace Rover Society", "Structures work on the rover’s chassis and suspension for the Australian Rover Challenge, and responsibility for the society’s budget."],
+    ["Education", "Mechanical Engineering (Honours), Macquarie University", "Honours thesis on piezoelectric systems in aerospace structures, alongside team design projects including a space crane gearbox and a wheelbarrow handle attachment."]
+  ]
+};
+
+/* ===================== RENDERING (no need to edit below) ===================== */
+const $ = id => document.getElementById(id);
+const S = SITE;
+$("h-name").textContent = S.name;
+$("h-lede").textContent = S.lede;
+if (S.photo) { const ph = $("h-photo"); ph.src = S.photo; ph.hidden = false; }
+$("h-jump").innerHTML =
+  S.jump.map(([label,href]) => `<a href="${href}">${label}</a>`).join("") +
+  (S.resume ? `<a class="solid" href="${encodeURI(S.resume)}">Download CV</a>` : "");
+$("projectList").innerHTML = S.projects.map((p,i) =>
+  `<li><button class="row" data-i="${i}" aria-haspopup="dialog"><div><h3>${p.title}</h3><div class="tags">${p.tags}</div></div><p>${p.summary}</p></button></li>`).join("");
+$("skillList").innerHTML = S.skills.map(([t,d]) => `<div><h3>${t}</h3><p>${d}</p></div>`).join("");
+$("expList").innerHTML = S.experience.map(([w,t,d]) => `<li><div class="when">${w}</div><h3>${t}</h3><p>${d}</p></li>`).join("");
+$("contactText").textContent = S.contactText;
+$("contactLinks").innerHTML =
+  `<a class="btn solid" href="mailto:${S.email}">Email me</a><a class="btn" href="${S.linkedin}" target="_blank" rel="noopener">LinkedIn</a>`;
+$("footer").textContent = `© ${new Date().getFullYear()} ${S.name}`;
+
+const dlg = $("dlg");
+function openProject(i){
+  const p = S.projects[i];
+  const imgs = p.images && p.images.length
+    ? p.images.map(src => `<img src="${src}" alt="${p.title}" loading="lazy">`).join("")
+    : `<div class="ph">Add images</div><div class="ph">Add images</div>`;
+  dlg.innerHTML = `<div class="dlg">
+    <button class="close" aria-label="Close project">Close</button>
+    <div class="tags">${p.tags}</div><h2 id="dlgTitle">${p.title}</h2>
+    ${p.details.map(t => `<p>${t}</p>`).join("")}
+    <dl class="facts">${p.facts.map(([k,v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join("")}</dl>
+    <div class="gallery">${imgs}</div></div>`;
+  dlg.showModal();
+  dlg.scrollTop = 0;
+}
+$("projectList").addEventListener("click", e => {
+  const b = e.target.closest(".row"); if (b) openProject(+b.dataset.i);
+});
+dlg.addEventListener("click", e => {
+  if (e.target === dlg || e.target.closest(".close")) dlg.close();   // close on button or backdrop click
+});
+</script>
+</body>
+</html>
